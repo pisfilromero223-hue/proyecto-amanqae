@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
 
     <!-- Tus estilos     -->
     <link rel="stylesheet" href="CSS/global.css">
@@ -425,7 +425,7 @@
                     Reserva ahora tu mesa y disfruta de una
                     <span>Gran Experiencia</span>
                 </h2>
-                <div class="schedule">
+                <div class="schedules">
                     <h3> Horario de atención</h3>
                     <p>Lunes a Viernes: 10:00 AM - 09:00 PM</p>
                     <p>Sábados 09 AM - 10:00 PM</p>
@@ -433,25 +433,25 @@
                 </div>
             </div>
 
-            <!-- RESERVAS -->
+            <!-- SPACER -->
             <div class="spacer"></div>
 
             <!-- FORMULARIO -->
-            <form action="" class="contact-form">
-                <!-- INPUT-->
+            <form class="contact-form">
+                <!--INPUT-->
                 <div class="group-form">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required placeholder="Janet Ore">
+                    <input type="text" id="name" name="name" required placeholder="Andres Pisfil">
                 </div>
                 <!-- FILA / 2 ELEMENTOS-->
                 <div class="row">
                     <div class="group-form">
                         <label for="email">Correo Electrónico</label>
-                        <input type="text" id="email" name="email" required placeholder=" ejm: JanetOre@gmail.com">
+                        <input type="text" id="email" name="email" required placeholder=" ejm: AndresPisfil@gmail.com">
                     </div>
                     <div class="group-form">
                         <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="ejm: +51 98233456">
+                        <input type="tel" id="phone" name="phone" required placeholder="ejm: +51 982334056">
                     </div>
                 </div>
                 <!-- FILA / 3 ELEMENTOS-->
@@ -460,10 +460,13 @@
                         <label for="date">Fecha</label>
                         <input type="date" id="date" name="date">
                     </div>
+
                     <div class="group-form">
                         <label for="time">Hora</label>
                         <select name="time" id="time">
-                            <option value="" disabled selected>Selecciona una hora</option>
+                            <option value="" disabled selected>
+                                Selecciona una hora
+                            </option>
                             <option value="10:00">10:00 AM</option>
                             <option value="11:00">11:00 AM</option>
                             <option value="12:00">12:00 PM</option>
@@ -495,36 +498,61 @@
             </form>
         </div>
     </section>
- 
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <h2 class="footer-title">D'Amanqae Café</h2>
+
+    <!--Pie de Pagina-->
+    <footer class="background-dark-1">
+        <div class="container">
+            <div class="content">
+                <div class="container-logo">
+                    <img src="images/logo.svg.svg" alt="logo">
+                    <span>Amanqae</span>
+                </div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Jirón Ica 281, Lima 15001</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+ 965325794</span>
+                    </li>
+                </ul>
+
             </div>
 
-            <div class="footer-info">
-                <p>📍 Jr. Bolognesi 356, Chimbote</p>
-                <p>📞 +51 987 654 321</p>
+            <div class="container-social-copyright">
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
 
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
+                <p>
+                  &copy;   2025 Amanqae Todos los derechos reservados
+                </p>
             </div>
         </div>
     </footer>
+
+
+
+
+
+
     <script src="JS/header.js"></script>
     <script src="JS/testimonial.js"></script>
-    <!-- Texto agregado para forzar actualización en GitHub Pages -->
-    <p style="text-align:center; color: gray;">© 2025 D'Amanqae Café</p>
-
 </body>
-<!-- Actualización para GitHub Pages -->
-
-
-
-
 
 </html>
