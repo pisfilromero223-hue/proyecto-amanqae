@@ -1,0 +1,113 @@
+.acerca-banner {
+    background-image: url(../images/home/hero-bg.jpg);
+    background-size: cover;
+    background-position: center center; /* 👈 centrado total */
+    height: 70vh;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 👈 centra el texto horizontal */
+    text-align: center; /* 👈 centra el texto */
+    z-index: 1;
+
+    /* Fondo oscuro encima */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Contenedor principal */
+    >.container {
+        display: flex;
+        flex-direction: column; /* 👈 para alinear texto en columna */
+        align-items: center; /* 👈 centra horizontalmente */
+        justify-content: center; /* 👈 centra verticalmente */
+        gap: 10px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* CONTENIDO DE TEXTO */
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: var(--texto-color1);
+
+        h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-weight: 800;
+
+            span {
+                color: var(--color-primary);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--texto-color1);
+            opacity: 0.9;
+
+            a {
+                color: var(--texto-color1);
+                text-decoration: none; /* 👈 quita el subrayado */
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--color-primary); /* 👈 efecto hover sutil */
+                }
+            }
+        }
+    }
+
+    /* ===========================
+     MEDIA QUERIES
+    =========================== */
+    @media (max-width: 992px) {
+        height: auto;
+        padding-top: 140px;
+
+        >.container {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .content {
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
