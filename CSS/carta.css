@@ -1,0 +1,433 @@
+.acerca-banner {
+    background-image: url(../images/home/hero-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    /* 👈 centrado total */
+    height: 70vh;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 👈 centra el texto horizontal */
+    text-align: center;
+    /* 👈 centra el texto */
+    z-index: 1;
+
+    /* Fondo oscuro encima */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Contenedor principal */
+    >.container {
+        display: flex;
+        flex-direction: column;
+        /* 👈 para alinear texto en columna */
+        align-items: center;
+        /* 👈 centra horizontalmente */
+        justify-content: center;
+        /* 👈 centra verticalmente */
+        gap: 10px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* CONTENIDO DE TEXTO */
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: var(--texto-color1);
+
+        h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-weight: 800;
+
+            span {
+                color: var(--color-primary);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--texto-color1);
+            opacity: 0.9;
+
+            a {
+                color: var(--texto-color1);
+                text-decoration: none;
+                /* 👈 quita el subrayado */
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--color-primary);
+                    /* 👈 efecto hover sutil */
+                }
+            }
+        }
+    }
+
+    /* ===========================
+     MEDIA QUERIES
+    =========================== */
+    @media (max-width: 992px) {
+        height: auto;
+        padding-top: 140px;
+
+        >.container {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .content {
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.section-carta {
+    padding: 100px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-wraper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        h2.title {
+            text-align: center;
+            width: 70%;
+            font-size: 42px;
+            letter-spacing: -1px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: lightgray;
+        }
+
+        hr {
+            border: 1px solid #e8f1f0;
+            width: 60%;
+            min-width: 200px;
+            margin: 0 auto 1rem;
+        }
+
+        p {
+            color: white;
+            font-size: 18px;
+            font-family: var(--default-font);
+        }
+    }
+
+    .contenedor-carta {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        .carta-images-container {
+            width: 360px;
+            height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.12);
+            }
+
+            .carta-info {
+                position: absolute;
+                inset: 0;
+                background: rgba(188, 51, 40, 0.78);
+                border: 4px solid rgba(255, 255, 255, 0.12);
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                opacity: 0;
+                transform: scale(0.9);
+                transition: opacity 0.35s ease, transform 0.35s ease;
+
+                h3 {
+                    color: white;
+                    font-size: 28px;
+                    font-weight: 700;
+                }
+
+                /* ---- BOTÓN DENTRO DEL HOVER ---- */
+                .btn-primary {
+                    background-color: white;
+                    color: var(--texto-rojito);
+                    padding: 14px 30px;
+                    font-size: 17px;
+                    font-weight: 700;
+                    border-radius: 10px;
+                    border: none;
+                    cursor: pointer;
+                    text-decoration: none;
+                    /* sin subrayado */
+                    transition:
+                        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.28s ease,
+                        background 0.3s ease,
+                        color 0.3s ease;
+
+                    /* sombra suave inicial */
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+                }
+
+                /* Hover elegante */
+                .btn-primary:hover {
+                    transform: translateY(-4px) scale(1.04);
+                    box-shadow: 0 10px 22px rgba(255, 255, 255, 0.25);
+                    background: white;
+                    color: var(--texto-rojito);
+                }
+
+                /* Efecto de presionar */
+                .btn-primary:active {
+                    transform: scale(0.92) translateY(1px);
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25) inset;
+                }
+
+
+                .button:hover {
+                    background: white;
+                    color: var(--texto-rojito);
+                }
+            }
+
+            &:hover .carta-info {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+
+    /* ------------ BOTÓN INFERIOR CENTRADO ------------ */
+
+    .boton-centro {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .carta-boton-inferior {
+        display: inline-block;
+        padding: 22px 50px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 999px;
+        background-color: var(--texto-rojito);
+        color: var(--texto-color1);
+        transition: 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .carta-boton-inferior:hover {
+        background-color: var(--texto-color1);
+        color: var(--color-secundary);
+        border: 2px solid var(--texto-rojito);
+    }
+
+
+
+}
+/*Reserva ahora*/
+.section-booking-table {
+    &>div {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 80px;
+    }
+
+    .content {
+        flex: 1;
+        color: var(--texto-color1);
+
+        .schedules {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            margin-top: 40px;
+
+            h3 {
+                color: var(--texto-color1);
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    .contact-form {
+        background-color: var(--texto-color1);
+        height: 500px;
+        width: 50%;
+        border-radius: 15px;
+        padding: 60px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .group-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            input {
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                font-weight: 400;
+                font-size: 14px;
+                color: var(--color-plomo);
+                transition: all 0.3s;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: var(--color-plomo);
+                }
+            }
+
+            select {
+                padding: 15px;
+                border: 1px solid #ccc;
+                font-weight: 400;
+                font-size: 14px;
+                color: var(--color-plomo);
+                transition: all 0.3s;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .row{
+            display: flex;
+            gap: 20px;
+
+            .group-form{
+                flex: 1;
+            }
+        }
+
+        button{
+            border: none;
+            background-color: var(--color-primary);
+            color: var(--texto-color1);
+            font-weight: 700;
+            padding: 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+
+            &:hover{
+                background-color: var(--color-secundary);
+            }
+
+        }
+    }
+
+    @media (max-width: 992px){
+        &> div{
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .spacer{
+            height: 400px;
+            flex: auto;
+            width: 100%;
+        }
+
+        .contact-form{
+            width: 100%;
+            top: 45%;
+            right: 0;
+        }
+    }
+    @media (max-width: 768px){
+        .spacer{
+            height: 700px;
+        }
+        .contact-form{
+            height: auto;
+            padding: 30px 20px;
+            top: 35%;
+
+            .row{
+                flex-direction: column;
+            }
+        }
+    }
+}
