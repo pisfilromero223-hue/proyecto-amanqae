@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,6 +21,9 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <img src="images/logo.svg.svg" alt="Amanqae Logo" class="logo-preload">
+    </div>
     <header>
         <div class="container header-expand">
 
@@ -159,7 +161,7 @@
         </iframe>
     </section>
 
-        <!-- RESERVAS -->
+    <!-- RESERVAS -->
     <section class="background-dark-2 section-booking-table">
         <div class="container">
             <div class="content">
@@ -283,11 +285,23 @@
                 </ul>
 
                 <p>
-                  &copy;   2025 Amanqae Todos los derechos reservados
+                    &copy; 2025 Amanqae Todos los derechos reservados
                 </p>
             </div>
         </div>
     </footer>
+
+    <script src="JS/header.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+
+            // Tiempo mínimo en milisegundos
+            setTimeout(() => {
+                preloader.classList.add("hidden");
+            }, 1500);
+        });
+    </script>
 
 
 </body>

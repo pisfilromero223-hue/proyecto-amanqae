@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <img src="images/logo.svg.svg" alt="Amanqae Logo" class="logo-preload">
+    </div>
     <header>
         <div class="container header-expand">
 
@@ -457,6 +460,16 @@
 
     <script src="JS/header.js"></script>
     <script src="JS/enfoque.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+
+            // Tiempo mínimo en milisegundos
+            setTimeout(() => {
+                preloader.classList.add("hidden");
+            }, 1500);
+        });
+    </script>
 </body>
 
 </html>

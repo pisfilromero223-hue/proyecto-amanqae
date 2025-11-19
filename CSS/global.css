@@ -24,6 +24,40 @@ body {
     font-family: var(--default-font);
     color: var(--texto-negro);
 }
+/* CONTENEDOR DEL PRELOADER */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0D0D0D; /* color del background Amanqae */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* LOGO ANIMADO */
+.logo-preload {
+    width: 120px;           /* tamaño del logo */
+    animation: bounce 1s infinite ease-in-out;
+}
+
+/* ANIMACIÓN DE REBOTE */
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* DESAPARECER PRELOADER */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 input,
 button,
