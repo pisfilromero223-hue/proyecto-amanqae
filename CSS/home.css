@@ -1136,7 +1136,7 @@
             display: flex;
             gap: 20px;
 
-            .group-form{
+            .form-group{
                 flex: 1;
             }
         }
