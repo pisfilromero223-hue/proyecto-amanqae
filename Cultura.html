@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/acercaDe.css">
+    <link rel="stylesheet" href="CSS/cultura.css">
 
 </head>
 
@@ -43,7 +43,7 @@
             </nav>
 
             <!-- Botón de reserva -->
-            <a href="Contacto.html" class="btn btn-primary">
+            <a href="Contacto.html#formulario-reserva" class="btn btn-primary">
                 Reserva una mesa <i class="fa-solid fa-check"></i>
             </a>
 
@@ -82,8 +82,99 @@
         </div>
     </section>
 
+    <!--agenda cultural-->
+    <section class="background-dark-1 section-agenda">
+    </section>
 
+
+
+    <section class="background-dark-2 section-talleres">
+        <div class="container">
+            <div class="content">
+                <div class="section-wraper">
+
+                    <span class="badge">Inscríbete Ahora</span>
+
+                    <h2 class="title">
+                        NUESTRA PASIÓN POR
+                        <span>LA CULTURA</span>
+                    </h2>
+
+                    <hr>
+
+                    <p>
+                        Nuestros talleres inspirados y mucho más.
+                    </p>
+
+                    <!-- TARJETAS -->
+                    <div class="contenedor-carta">
+
+                        <div class="carta-images-container" data-taller="1">
+                            <img src="images/home/taller1.jpg" alt="t1">
+                            <div class="carta-info">
+                                <h3>PINTURA VIRAL </h3>
+                                <a href="#" class="btn-primary">Infórmate</a>
+                            </div>
+                        </div>
+
+                        <div class="carta-images-container" data-taller="2">
+                            <img src="images/home/taller2.jpg" alt="t2">
+                            <div class="carta-info">
+                                <h3>BRATZASO</h3>
+                                <a href="#" class="btn-primary">Infórmate</a>
+                            </div>
+                        </div>
+
+                        <div class="carta-images-container" data-taller="3">
+                            <img src="images/home/taller3.jpg" alt="t3">
+                            <div class="carta-info">
+                                <h3>SEPARADORES</h3>
+                                <a href="#" class="btn-primary">Infórmate</a>
+                            </div>
+                        </div>
+
+                        <div class="carta-images-container" data-taller="4">
+                            <img src="images/home/taller4.jpg" alt="t4">
+                            <div class="carta-info">
+                                <h3>PERÚ EN AZUL PRUSIA</h3>
+                                <a href="#" class="btn-primary">Infórmate</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENTANA FLOTANTE -->
+    <div id="modalTaller" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+
+            <div class="modal-left">
+                <img id="modalImg" src="" alt="">
+            </div>
+
+            <div class="modal-right">
+                <h3 id="modalTitulo"></h3>
+                <p id="modalDescripcion"></p>
+
+                <!-- BOTÓN  -->
+                <a id="modalBtn" class="btn-inscribite" target="_blank">Inscribite</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/cultura.js"></script>
     <script src="JS/header.js"></script>
+    <script src="JS/cultura.js"></script>
+
+
 </body>
 
 </html>

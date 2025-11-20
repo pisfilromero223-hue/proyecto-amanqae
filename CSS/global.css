@@ -93,6 +93,10 @@ section {
         padding: 50px 15px;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* LOGO */
 .container-logo {

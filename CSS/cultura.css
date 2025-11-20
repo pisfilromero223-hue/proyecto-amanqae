@@ -1,0 +1,367 @@
+.acerca-banner {
+    background-image: url(../images/home/hero-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    /* 👈 centrado total */
+    height: 70vh;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 👈 centra el texto horizontal */
+    text-align: center;
+    /* 👈 centra el texto */
+    z-index: 1;
+
+    /* Fondo oscuro encima */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Contenedor principal */
+    >.container {
+        display: flex;
+        flex-direction: column;
+        /* 👈 para alinear texto en columna */
+        align-items: center;
+        /* 👈 centra horizontalmente */
+        justify-content: center;
+        /* 👈 centra verticalmente */
+        gap: 10px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* CONTENIDO DE TEXTO */
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: var(--texto-color1);
+
+        h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-weight: 800;
+
+            span {
+                color: var(--color-primary);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--texto-color1);
+            opacity: 0.9;
+
+            a {
+                color: var(--texto-color1);
+                text-decoration: none;
+                /* 👈 quita el subrayado */
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--color-primary);
+                    /* 👈 efecto hover sutil */
+                }
+            }
+        }
+    }
+
+    /* ===========================
+     MEDIA QUERIES
+    =========================== */
+    @media (max-width: 992px) {
+        height: auto;
+        padding-top: 140px;
+
+        >.container {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .content {
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.section-talleres {
+    padding: 100px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 25px;
+    }
+
+    .section-wraper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        h2.title {
+            text-align: center;
+            width: 70%;
+            font-size: 42px;
+            letter-spacing: -1px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: lightgray;
+        }
+
+        hr {
+            border: 1px solid #e8f1f0;
+            width: 60%;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    /* TARJETAS */
+    .contenedor-carta {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        .carta-images-container {
+            width: 360px;
+            height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.12);
+            }
+
+            .carta-info {
+                position: absolute;
+                inset: 0;
+                background: rgba(188, 51, 40, 0.78);
+                border: 4px solid rgba(255, 255, 255, 0.12);
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                opacity: 0;
+                transform: scale(0.9);
+                transition: opacity 0.35s ease, transform 0.35s ease;
+
+                h3 {
+                    color: white;
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+
+                .btn-primary {
+                    background: white;
+                    color: var(--texto-rojito);
+                    padding: 14px 30px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    font-weight: 700;
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+                    transition: 0.28s;
+
+                    &:hover {
+                        transform: translateY(-4px) scale(1.04);
+                    }
+                }
+            }
+
+            &:hover .carta-info {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.70);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+
+    .modal-content {
+        background: #fff;
+        width: 85%;
+        max-width: 950px;
+        height: 520px;
+        border-radius: 22px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+
+        animation: modalFade .45s ease;
+
+        @keyframes modalFade {
+            from {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 12px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: 0.2s ease;
+
+            &:hover {
+                color: #b62a1f;
+            }
+        }
+
+        .modal-left {
+            width: 50%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .modal-right {
+            width: 50%;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+
+            h3 {
+                font-size: 28px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                color: #222;
+            }
+
+            p {
+                font-size: 17px;
+                line-height: 1.5;
+                color: #333;
+            }
+
+            
+            .btn-inscribite {
+                background: #b62a1f;
+                color: white;
+                font-weight: bold;
+                padding: 14px 28px;
+                display: inline-block;
+                width: fit-content;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: 17px;
+                transition: .28s cubic-bezier(0.22,1,0.36,1);
+                box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+
+                &:hover {
+                    transform: translateY(-4px) scale(1.04);
+                    box-shadow: 0 10px 25px rgba(182,42,31,0.35);
+                }
+
+                &:active {
+                    transform: scale(0.93);
+                }
+            }
+        }
+    }
+}
+
+/* animacion abrir */
+.fadeIn {
+    animation: fadeInModal .3s ease forwards;
+}
+
+/* animacion cerrar*/
+.fadeOut {
+    animation: fadeOutModal .3s ease forwards;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOutModal {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.90);
+    }
+}

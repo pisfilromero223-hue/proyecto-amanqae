@@ -45,7 +45,7 @@
             </nav>
 
             <!-- Botón de reserva -->
-            <a href="Contacto.html" class="btn btn-primary">
+            <a href="Contacto.html#formulario-reserva" class="btn btn-primary">
                 Reserva una mesa <i class="fa-solid fa-check"></i>
             </a>
 
@@ -163,6 +163,7 @@
 
     <!-- RESERVAS -->
     <section class="background-dark-2 section-booking-table">
+
         <div class="container">
             <div class="content">
                 <span class="badge">Reserva una mesa</span>
@@ -182,65 +183,68 @@
             <div class="spacer"></div>
 
             <!-- FORMULARIO -->
-            <form class="contact-form">
-                <!--INPUT-->
-                <div class="group-form">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required placeholder="Andres Pisfil">
-                </div>
-                <!-- FILA / 2 ELEMENTOS-->
-                <div class="row">
+            <div class="contacta-formu" id="formulario-reserva">
+                <form class="contact-form">
+                    <!--INPUT-->
                     <div class="group-form">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="text" id="email" name="email" required placeholder=" ejm: AndresPisfil@gmail.com">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required placeholder="Andres Pisfil">
                     </div>
-                    <div class="group-form">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="ejm: +51 982334056">
+                    <!-- FILA / 2 ELEMENTOS-->
+                    <div class="row">
+                        <div class="group-form">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="text" id="email" name="email" required
+                                placeholder=" ejm: AndresPisfil@gmail.com">
+                        </div>
+                        <div class="group-form">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="ejm: +51 982334056">
+                        </div>
                     </div>
-                </div>
-                <!-- FILA / 3 ELEMENTOS-->
-                <div class="row">
-                    <div class="group-form">
-                        <label for="date">Fecha</label>
-                        <input type="date" id="date" name="date">
-                    </div>
+                    <!-- FILA / 3 ELEMENTOS-->
+                    <div class="row">
+                        <div class="group-form">
+                            <label for="date">Fecha</label>
+                            <input type="date" id="date" name="date">
+                        </div>
 
-                    <div class="group-form">
-                        <label for="time">Hora</label>
-                        <select name="time" id="time">
-                            <option value="" disabled selected>
-                                Selecciona una hora
-                            </option>
-                            <option value="10:00">10:00 AM</option>
-                            <option value="11:00">11:00 AM</option>
-                            <option value="12:00">12:00 PM</option>
-                            <option value="13:00">01:00 PM</option>
-                            <option value="14:00">02:00 PM</option>
-                            <option value="15:00">03:00 PM</option>
-                            <option value="16:00">04:00 PM</option>
-                            <option value="17:00">05:00 PM</option>
-                            <option value="18:00">06:00 PM</option>
-                            <option value="19:00">07:00 PM</option>
-                            <option value="20:00">08:00 PM</option>
-                            <option value="21:00">09:00 PM</option>
-                        </select>
+                        <div class="group-form">
+                            <label for="time">Hora</label>
+                            <select name="time" id="time">
+                                <option value="" disabled selected>
+                                    Selecciona una hora
+                                </option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">01:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                                <option value="17:00">05:00 PM</option>
+                                <option value="18:00">06:00 PM</option>
+                                <option value="19:00">07:00 PM</option>
+                                <option value="20:00">08:00 PM</option>
+                                <option value="21:00">09:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="group-form">
+                            <label for="number-person"> N° de personas</label>
+                            <select name="number-person" id="number-person">
+                                <option value="" disabled selected>Numero de personas</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="group-form">
-                        <label for="number-person"> N° de personas</label>
-                        <select name="number-person" id="number-person">
-                            <option value="" disabled selected>Numero de personas</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit">Reserva ahora</button>
-            </form>
+                    <button type="submit">Reserva ahora</button>
+                </form>
+            </div>
         </div>
     </section>
 
