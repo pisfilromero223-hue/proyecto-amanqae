@@ -22,6 +22,11 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <img src="images/logo.svg.svg" alt="Amanqae Logo" class="logo-preload">
+    </div>
+
+
     <header>
         <div class="container header-expand">
 
@@ -82,12 +87,56 @@
         </div>
     </section>
 
-    <!--agenda cultural-->
-    <section class="background-dark-1 section-agenda">
+    <!--carrusel de agenda-->
+    <section class="agenda-cultura">
+        <div class="agenda-bg"></div>
+
+        <h2 class="agenda-title">Agenda Cultura</h2>
+
+        <div class="agenda-wrapper">
+            <div class="agenda-carousel" id="agendaCarousel">
+
+                <div class="cultura-card">
+                    <img src="images/home/age1.jpg" alt="">
+                    <p>PERÚ EN AZUL PRUSIA / Katherine De Lama</p>
+                </div>
+
+                <div class="cultura-card">
+                    <img src="images/home/age2.jpg" alt="">
+                    <p>PINTURA VIRAL Y MOMAZOS / Leonardo Serquen</p>
+                </div>
+
+                <div class="cultura-card">
+                    <img src="images/home/age4.jpg" alt="">
+                    <p>CONVERSATORIO / Voces y Obstaculos</p>
+                </div>
+
+                <div class="cultura-card">
+                    <img src="images/home/age3.jpg" alt="">
+                    <p>SEPARADORES BOTÁNICOS / Luz Gutiérrez</p>
+                </div>
+
+                <div class="cultura-card">
+                    <img src="images/home/age5.jpg" alt="">
+                    <p>ACUARELA LIBRE / Leonardo Anco</p>
+                </div>
+
+                <div class="cultura-card">
+                    <img src="images/home/age6.jpg" alt="">
+                    <p>BRATZAZO / Trilce Peralta</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="agenda-dots">
+            <span class="dot active" data-i="0"></span>
+            <span class="dot" data-i="1"></span>
+            <span class="dot" data-i="2"></span>
+        </div>
     </section>
 
-
-
+    <!--talleres-->
     <section class="background-dark-2 section-talleres">
         <div class="container">
             <div class="content">
@@ -147,7 +196,7 @@
         </div>
     </section>
 
-    <!-- VENTANA FLOTANTE -->
+    <!-- VENTANA FLOTANTES -->
     <div id="modalTaller" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -166,6 +215,52 @@
         </div>
     </div>
 
+    <footer class="background-dark-1">
+        <div class="container">
+            <div class="content">
+                <div class="container-logo">
+                    <img src="images/logo.svg.svg" alt="logo">
+                    <span>Amanqae</span>
+                </div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Jirón Ica 281, Lima 15001</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+ 965325794</span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="container-social-copyright">
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <p>
+                    &copy; 2025 Amanqae Todos los derechos reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+
 
 
 
@@ -173,6 +268,18 @@
     <script src="js/cultura.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/cultura.js"></script>
+    <script src="JS/carruselcul.js"></script>
+    <!--preloder-->
+    <script>
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+
+            // Tiempo mínimo en milisegundos
+            setTimeout(() => {
+                preloader.classList.add("hidden");
+            }, 1500);
+        });
+    </script>
 
 
 </body>
